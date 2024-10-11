@@ -21,5 +21,4 @@ body {
 .bg {
   position: absolute;
   height: 1000px;
-  z-index: -1;
 }

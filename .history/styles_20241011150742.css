@@ -1,0 +1,9 @@
+body {
+  font-family: "Press Start 2P", system-ui;
+  height: 100dvh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #111;
+}
