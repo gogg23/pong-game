@@ -62,17 +62,3 @@ body {
   top: 88px;
   font-size: 26px;
 }
-
-.score {
-  position: absolute;
-  top: 88px;
-  display: flex;
-  width: 60px;
-  height: 60px;
-  justify-content: center;
-  align-items: center;
-}
-
-.player1Score {
-  left: calc(50% - 200px);
-}

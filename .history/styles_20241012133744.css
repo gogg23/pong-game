@@ -73,6 +73,6 @@ body {
   align-items: center;
 }
 
-.player1Score {
+player1Score {
   left: calc(50% - 200px);
 }

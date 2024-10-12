@@ -47,32 +47,4 @@ body {
   background: rgba(255, 255, 255, 0.9);
   border-radius: 2px;
   left: 290px;
-  top: 190px;
-}
-
-.net {
-  position: fixed;
-  border-right: 8px rgba(255, 255, 255, 0.3 dotted);
-  height: 96px;
-  left: calc(50% - 4px);
-}
-
-.title {
-  position: absolute;
-  top: 88px;
-  font-size: 26px;
-}
-
-.score {
-  position: absolute;
-  top: 88px;
-  display: flex;
-  width: 60px;
-  height: 60px;
-  justify-content: center;
-  align-items: center;
-}
-
-.player1Score {
-  left: calc(50% - 200px);
 }
