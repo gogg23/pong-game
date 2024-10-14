@@ -5,12 +5,8 @@ console.log(startText);
 //Games Variable
 let gameRunning = false;
 
-document.addEventListener("keydown", startGame);
-
 // Start Game
 function startGame() {
   gameRunning = true;
   startText.style.display = "none";
 }
-
-startGame();

@@ -96,12 +96,14 @@ body {
   padding: 10px;
 }
 
-.vignett {
+/*.vignett {
   height: 100dvh;
-  width: 100dvw;
+  width: 100dvh;
   background: radial-gradient(
     circle,
-    rgba(0, 0, 0, 0) 50%,
-    rgba(0, 0, 0, 1) 100%
+    rgba(0, 0, 0, 0),
+    50%,
+    rgba(0, 0, 0, 1),
+    100%
   );
-}
+}*/
