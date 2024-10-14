@@ -17,11 +17,6 @@ function startGame() {
 
 function gameLoop() {
   if (gameRunning) {
-    updatePaddle1();
-    setTimeout(gameLoop, 8);
+    console.log("Game is running");
   }
-}
-
-function updatePaddle1() {
-  console.log("paddle1");
 }

@@ -18,7 +18,7 @@ function startGame() {
 function gameLoop() {
   if (gameRunning) {
     updatePaddle1();
-    setTimeout(gameLoop, 8);
+    setTimeout(gameRunning, 8);
   }
 }
 

@@ -18,10 +18,6 @@ function startGame() {
 function gameLoop() {
   if (gameRunning) {
     updatePaddle1();
-    setTimeout(gameLoop, 8);
+    setTimeout(gameRunning, 8);
   }
-}
-
-function updatePaddle1() {
-  console.log("paddle1");
 }
