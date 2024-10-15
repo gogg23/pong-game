@@ -6,7 +6,6 @@ let gameRunning = false;
 let keysPressed = {};
 
 document.addEventListener("keydown", startGame);
-document.addEventListener("keydown", handleKeyDown);
 
 // Start Game
 function startGame() {
