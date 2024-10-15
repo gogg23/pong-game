@@ -29,10 +29,6 @@ function handleKeyDown(e) {
   keysPressed[e.key] = true;
 }
 
-function handleKeyUp(e) {
-  keysPressed[e.key] = false;
-}
-
 function updatePaddle1() {
   console.log("keysPressed");
 }
