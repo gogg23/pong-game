@@ -2,14 +2,11 @@
 const startText = document.getElementById("startText");
 const paddle1 = document.getElementById("paddle1");
 
-//Game Variables
+//Games Variable
 let gameRunning = false;
 let keysPressed = {};
 let paddle1Speed = 0;
 let paddle1Y = 150;
-
-//Game Constants
-const paddleAcceleration = 1;
 
 document.addEventListener("keydown", startGame);
 document.addEventListener("keydown", handleKeyDown);
@@ -41,7 +38,7 @@ function handleKeyUp(e) {
 
 function updatePaddle1() {
   if (keysPressed["w"]) {
-    paddle1Speed = Math.max(paddle1Speed - paddleAcceleration, -5);
+    paddle1Speed = Math.max(paddle1Speed - paddleAcceleration, -3);
   }
   paddle1Y = paddle1Speed;
 
