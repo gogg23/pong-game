@@ -10,8 +10,7 @@ let paddle1Y = 150;
 
 //Game Constants
 const paddleAcceleration = 1;
-const maxPaddleSpeed = 5;
-const paddleDeceleration = 1;
+maxPaddleSpeed = 5;
 
 document.addEventListener("keydown", startGame);
 document.addEventListener("keydown", handleKeyDown);
@@ -46,10 +45,6 @@ function updatePaddle1() {
     paddle1Speed = Math.max(paddle1Speed - paddleAcceleration, -maxPaddleSpeed);
   } else if (keysPressed["s"]) {
     paddle1Speed = Math.min(paddle1Speed + paddleAcceleration, maxPaddleSpeed);
-  } else {
-    if (paddle1Speed > 0) {
-      paddle1Speed = Math.max(paddle1Speed - paddleDeceleration, 0);
-    }
   }
   paddle1Y += paddle1Speed;
 

@@ -11,7 +11,6 @@ let paddle1Y = 150;
 //Game Constants
 const paddleAcceleration = 1;
 const maxPaddleSpeed = 5;
-const paddleDeceleration = 1;
 
 document.addEventListener("keydown", startGame);
 document.addEventListener("keydown", handleKeyDown);

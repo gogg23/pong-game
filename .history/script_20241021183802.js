@@ -10,17 +10,15 @@ let paddle1Y = 150;
 
 //Game Constants
 const paddleAcceleration = 1;
-const maxPaddleSpeed = 5;
-const paddleDeceleration = 1;
+maxPaddleSpeed = 5;
 
 document.addEventListener("keydown", startGame);
 document.addEventListener("keydown", handleKeyDown);
 document.addEventListener("keyup", handleKeyUp);
 
-// Start Game
+// Start game
 function startGame() {
   gameRunning = true;
-  console.log("start");
   startText.style.display = "none";
   document.removeEventListener("keydown", startGame);
   gameLoop();
@@ -29,6 +27,8 @@ function startGame() {
 function gameLoop() {
   if (gameRunning) {
     updatePaddle1();
+    updatePaddle2();
+    moveBall();
     setTimeout(gameLoop, 8);
   }
 }
@@ -46,12 +46,7 @@ function updatePaddle1() {
     paddle1Speed = Math.max(paddle1Speed - paddleAcceleration, -maxPaddleSpeed);
   } else if (keysPressed["s"]) {
     paddle1Speed = Math.min(paddle1Speed + paddleAcceleration, maxPaddleSpeed);
-  } else {
-    if (paddle1Speed > 0) {
-      paddle1Speed = Math.max(paddle1Speed - paddleDeceleration, 0);
-    }
   }
   paddle1Y += paddle1Speed;
-
   paddle1.style.top = paddle1Y + "px";
 }
