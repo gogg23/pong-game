@@ -68,9 +68,9 @@ function updatePaddle1() {
 }
 
 function updatePaddle2() {
-  if (keysPressed["w"]) {
+  if (keysPressed["p"]) {
     paddle2Speed = Math.max(paddle2Speed - paddleAcceleration, -maxPaddleSpeed);
-  } else if (keysPressed["s"]) {
+  } else if (keysPressed["l"]) {
     paddle2Speed = Math.min(paddle2Speed + paddleAcceleration, maxPaddleSpeed);
   } else {
     if (paddle2Speed > 0) {

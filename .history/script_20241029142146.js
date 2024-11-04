@@ -69,20 +69,20 @@ function updatePaddle1() {
 
 function updatePaddle2() {
   if (keysPressed["w"]) {
-    paddle2Speed = Math.max(paddle2Speed - paddleAcceleration, -maxPaddleSpeed);
+    paddle2Speed = Math.max(paddle1Speed - paddleAcceleration, -maxPaddleSpeed);
   } else if (keysPressed["s"]) {
-    paddle2Speed = Math.min(paddle2Speed + paddleAcceleration, maxPaddleSpeed);
+    paddle2Speed = Math.min(paddle1Speed + paddleAcceleration, maxPaddleSpeed);
   } else {
     if (paddle2Speed > 0) {
       paddle2Speed = Math.max(paddle1Speed - paddleDeceleration, 0);
-    } else if (paddle2 < 0) {
+    } else if (paddle1 < 0) {
       paddle2Speed = Math.min(paddle2Speed + paddleDeceleration, 0);
     }
   }
   paddle2Y += paddle2Speed;
 
   if (paddle2Y < 0) {
-    paddle2Y = 0;
+    paddle1Y = 0;
   }
 
   if (paddle2Y > gameHeight - paddle2.clientHeight) {
