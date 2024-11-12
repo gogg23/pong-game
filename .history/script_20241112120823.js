@@ -15,8 +15,6 @@ let ballX = 290;
 let ballSpeedX = 2;
 let ballY = 190;
 let ballSpeedY = 2;
-let player2Score = 0;
-let player1Score = 0;
 
 //Game Constants
 const paddleAcceleration = 1;
@@ -135,17 +133,6 @@ function moveBall() {
 
   //out of gameArea collision
 
-  if (ball <= 0) {
-    player2Score++;
-    updateScoreboard();
-  } else if (ballX >= gameWidth - ball.clientWidth) {
-    player1Score++;
-    updateScoreboard();
-  }
   ball.style.left = ballX + "px";
   ball.style.top = ballY + "px";
-}
-
-function updateScoreboard() {
-  player1ScoreElement.textContext = player1Score;
 }

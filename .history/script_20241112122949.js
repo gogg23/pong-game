@@ -137,15 +137,10 @@ function moveBall() {
 
   if (ball <= 0) {
     player2Score++;
-    updateScoreboard();
   } else if (ballX >= gameWidth - ball.clientWidth) {
     player1Score++;
     updateScoreboard();
   }
   ball.style.left = ballX + "px";
   ball.style.top = ballY + "px";
-}
-
-function updateScoreboard() {
-  player1ScoreElement.textContext = player1Score;
 }

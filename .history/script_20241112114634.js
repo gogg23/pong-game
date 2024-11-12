@@ -15,8 +15,6 @@ let ballX = 290;
 let ballSpeedX = 2;
 let ballY = 190;
 let ballSpeedY = 2;
-let player2Score = 0;
-let player1Score = 0;
 
 //Game Constants
 const paddleAcceleration = 1;
@@ -113,39 +111,12 @@ function moveBall() {
     ballSpeedY = -ballSpeedY;
   }
 
-  //paddle1 collision
-
-  if (
-    ballX <= paddle1.clientWidth &&
-    ballY >= paddle1Y &&
-    ballY <= paddle1Y + paddle1.clientHeight
-  ) {
-    ballSpeedX = -ballSpeedX;
-  }
-
-  //paddle2 collision
-
   if (
     ballX >= gameWidth - paddle2.clientWidth - ball.clientWidth &&
-    ballY >= paddle2Y &&
-    ballY <= paddle2Y + paddle2.clientHeight
+    ballY >= paddle2Y
   ) {
     ballSpeedX = -ballSpeedX;
-  }
-
-  //out of gameArea collision
-
-  if (ball <= 0) {
-    player2Score++;
-    updateScoreboard();
-  } else if (ballX >= gameWidth - ball.clientWidth) {
-    player1Score++;
-    updateScoreboard();
   }
   ball.style.left = ballX + "px";
   ball.style.top = ballY + "px";
-}
-
-function updateScoreboard() {
-  player1ScoreElement.textContext = player1Score;
 }
