@@ -107,11 +107,11 @@ function moveBall() {
   ballX += ballSpeedX;
   ballY += ballSpeedY;
 
-  if (ballY >= gameHeight - ball.clientHeight || ballY <= 0) {
+  if (ballY >= gameHeight - ball.clientHeight || ballY <= 0);
+  {
     ballSpeedY = -ballSpeedY;
   }
 
-  if (ballX >= gameWidth - paddle2.clientWidth - ball.clientWidth)
-    ball.style.left = ballX + "px";
+  ball.style.left = ballX + "px";
   ball.style.top = ballY + "px";
 }

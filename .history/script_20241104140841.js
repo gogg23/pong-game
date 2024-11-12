@@ -2,7 +2,6 @@
 const startText = document.getElementById("startText");
 const paddle1 = document.getElementById("paddle1");
 const paddle2 = document.getElementById("paddle2");
-const ball = document.getElementById("ball");
 
 //Game Variables
 let gameRunning = false;
@@ -11,10 +10,6 @@ let paddle1Speed = 0;
 let paddle1Y = 150;
 let paddle2Speed = 0;
 let paddle2Y = 150;
-let ballX = 290;
-let ballSpeedX = 2;
-let ballY = 190;
-let ballSpeedY = 2;
 
 //Game Constants
 const paddleAcceleration = 1;
@@ -40,7 +35,6 @@ function gameLoop() {
   if (gameRunning) {
     updatePaddle1();
     updatePaddle2();
-    moveBall();
     setTimeout(gameLoop, 8);
   }
 }
@@ -101,17 +95,4 @@ function updatePaddle2() {
     paddle2Y = gameHeight - paddle2.clientHeight;
   }
   paddle2.style.top = paddle2Y + "px";
-}
-
-function moveBall() {
-  ballX += ballSpeedX;
-  ballY += ballSpeedY;
-
-  if (ballY >= gameHeight - ball.clientHeight || ballY <= 0) {
-    ballSpeedY = -ballSpeedY;
-  }
-
-  if (ballX >= gameWidth - paddle2.clientWidth - ball.clientWidth)
-    ball.style.left = ballX + "px";
-  ball.style.top = ballY + "px";
 }
