@@ -1,12 +1,20 @@
 //create JS representation from the DOM
 const startText = document.getElementById("startText");
 const paddle1 = document.getElementById("paddle1");
+const paddle2 = document.getElementById("paddle2");
+const ball = document.getElementById("ball");
 
 //Game Variables
 let gameRunning = false;
 let keysPressed = {};
 let paddle1Speed = 0;
 let paddle1Y = 150;
+let paddle2Speed = 0;
+let paddle2Y = 150;
+let ballX = 290;
+let ballSpeedX = 2;
+let ballY = 190;
+let ballSpeedY = 2;
 
 //Game Constants
 const paddleAcceleration = 1;
@@ -31,6 +39,8 @@ function startGame() {
 function gameLoop() {
   if (gameRunning) {
     updatePaddle1();
+    updatePaddle2();
+    moveBall();
     setTimeout(gameLoop, 8);
   }
 }
@@ -51,10 +61,11 @@ function updatePaddle1() {
   } else {
     if (paddle1Speed > 0) {
       paddle1Speed = Math.max(paddle1Speed - paddleDeceleration, 0);
-    } else if (paddle1 < 0) {
+    } else if (paddle1Speed < 0) {
       paddle1Speed = Math.min(paddle1Speed + paddleDeceleration, 0);
     }
   }
+
   paddle1Y += paddle1Speed;
 
   if (paddle1Y < 0) {
@@ -68,17 +79,18 @@ function updatePaddle1() {
 }
 
 function updatePaddle2() {
-  if (keysPressed["w"]) {
+  if (keysPressed["ArrowUp"]) {
     paddle2Speed = Math.max(paddle2Speed - paddleAcceleration, -maxPaddleSpeed);
-  } else if (keysPressed["s"]) {
+  } else if (keysPressed["ArrowDown"]) {
     paddle2Speed = Math.min(paddle2Speed + paddleAcceleration, maxPaddleSpeed);
   } else {
     if (paddle2Speed > 0) {
-      paddle2Speed = Math.max(paddle1Speed - paddleDeceleration, 0);
-    } else if (paddle2 < 0) {
+      paddle2Speed = Math.max(paddle2Speed - paddleDeceleration, 0);
+    } else if (paddle2Speed < 0) {
       paddle2Speed = Math.min(paddle2Speed + paddleDeceleration, 0);
     }
   }
+
   paddle2Y += paddle2Speed;
 
   if (paddle2Y < 0) {
@@ -89,4 +101,16 @@ function updatePaddle2() {
     paddle2Y = gameHeight - paddle2.clientHeight;
   }
   paddle2.style.top = paddle2Y + "px";
+}
+
+function moveBall() {
+  ballX += ballSpeedX;
+  ballY += ballSpeedY;
+
+  if (ballY >= gameHeight - ball.clientHeight || ballY <= 0) {
+    ballSpeedY = -ballSpeedY;
+  }
+
+  ball.style.left = ballX + "px";
+  ball.style.top = ballY + "px";
 }
