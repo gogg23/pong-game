@@ -23,7 +23,7 @@ let ballSpeedY = 2;
 let player2Score = 0;
 let player1Score = 0;
 
-// Game Constants
+// Game Contants
 const paddleAcceleration = 1;
 const maxPaddleSpeed = 5;
 const paddleDeceleration = 1;
